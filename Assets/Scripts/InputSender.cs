@@ -21,6 +21,7 @@ public class InputSender : MonoBehaviour
 
     public void Move()
     {
+        print("moooove");
         if (!player.IsOwner) return;
 
         player.SendInputServerRpc(1);

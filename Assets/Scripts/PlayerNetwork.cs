@@ -15,20 +15,11 @@ public class PlayerNetwork : NetworkBehaviour
             playerId = OwnerClientId.GetHashCode();
             FindFirstObjectByType<GameManagerNetwork>().RegisterPlayer(this);
         }
-
-        //StartCoroutine(CodeDelay());
     }
 
     [ServerRpc]
     public void SendInputServerRpc(int input)
     {
         FindFirstObjectByType<GameManagerNetwork>().ReceiveInput(this, input);
-    }
-
-    private IEnumerator CodeDelay()
-    {
-        yield return new WaitForSeconds(5);
-        
-        SceneManager.LoadSceneAsync(1);
     }
 }

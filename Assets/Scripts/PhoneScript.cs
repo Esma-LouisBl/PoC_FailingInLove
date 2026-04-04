@@ -1,5 +1,6 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PhoneScript : MonoBehaviour
 {
@@ -13,7 +14,10 @@ public class PhoneScript : MonoBehaviour
     [ServerRpc]
     public void HidePhone()
     {
-        print("heho");
+        //print("heho");
         ObjectToHide.SetActive(false);
+        //NetworkSceneManager.Load();
+        //NetworkManager.SceneManager.LoadScene("TestChangeScene", LoadSceneMode.Additive);
+
     }
 }

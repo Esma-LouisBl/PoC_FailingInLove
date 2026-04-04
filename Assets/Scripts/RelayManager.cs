@@ -40,6 +40,26 @@ public class RelayManager : MonoBehaviour
 
         NetworkManager.Singleton.StartHost();
     }
+    
+    public async void StartServer()
+    {
+        Allocation allocation = await RelayService.Instance.CreateAllocationAsync(5);
+        string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+
+        codeText.text = "Code : " + joinCode;
+
+        var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
+
+        transport.SetHostRelayData(
+            allocation.RelayServer.IpV4,
+            (ushort)allocation.RelayServer.Port,
+            allocation.AllocationIdBytes,
+            allocation.Key,
+            allocation.ConnectionData
+        );
+
+        NetworkManager.Singleton.StartServer();
+    }
 
     // CLIENT
     public async void JoinGame()

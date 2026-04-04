@@ -21,7 +21,7 @@ public class GameManagerNetwork : NetworkBehaviour
         
         if (input == 1)
         {
-            // player.GetComponent<Transform>().position += Vector3.right;
+            player.GetComponent<Transform>().position += Vector3.right;
         }
     }
 }
