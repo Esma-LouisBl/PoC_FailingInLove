@@ -16,7 +16,7 @@ public class PlayerNetwork : NetworkBehaviour
             FindFirstObjectByType<GameManagerNetwork>().RegisterPlayer(this);
         }
 
-        StartCoroutine(Prout());
+        //StartCoroutine(CodeDelay());
     }
 
     [ServerRpc]
@@ -25,9 +25,9 @@ public class PlayerNetwork : NetworkBehaviour
         FindFirstObjectByType<GameManagerNetwork>().ReceiveInput(this, input);
     }
 
-    private IEnumerator Prout()
+    private IEnumerator CodeDelay()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         
         SceneManager.LoadSceneAsync(1);
     }
