@@ -1,9 +1,15 @@
+using System;
+using TMPro;
 using UnityEngine;
 using Unity.Netcode;
 
 public class GameManager : NetworkBehaviour
 {
     public GameObject playerUI, serverUI, connectionUI;
+    public TextMeshProUGUI numberOfPlayersText, myNumberAsPlayerText;
+
+    public NetworkVariable<int> numberOfPlayers;
+    private int myNumberAsPlayer;
     
     public void SetPlayer()
     {
@@ -11,6 +17,9 @@ public class GameManager : NetworkBehaviour
         {
             connectionUI.SetActive(false);
             playerUI.SetActive(true);
+            numberOfPlayers.Value++;
+            myNumberAsPlayer = numberOfPlayers.Value;
+            myNumberAsPlayerText.text = myNumberAsPlayer.ToString();
         }
     }
     
@@ -20,6 +29,19 @@ public class GameManager : NetworkBehaviour
         {
             connectionUI.SetActive(false);
             serverUI.SetActive(true);
+        }
+    }
+
+    private void Update()
+    {
+        if (IsOwner)
+        {
+            numberOfPlayersText.text = numberOfPlayers.Value.ToString();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //print(numberOfPlayers.Value);
         }
     }
 }
