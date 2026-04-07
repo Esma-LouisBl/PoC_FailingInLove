@@ -15,13 +15,14 @@ public class InputSender : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            player.SendInputServerRpc(1);
+            player.SendInputServerRpc(2);
         }
     }
 
     public void Move()
     {
         print("moooove");
+        print(player.IsOwner);
         if (!player.IsOwner) return;
 
         player.SendInputServerRpc(1);

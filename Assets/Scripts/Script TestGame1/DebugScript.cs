@@ -11,7 +11,7 @@ public class DebugScript : NetworkBehaviour
     
     void Start () 
     {
-        myDelegate = OnIncrement;
+        //myDelegate = OnIncrement;
     }
 
     void Update()
@@ -19,10 +19,12 @@ public class DebugScript : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             print(IsOwner);
-            myDelegate();
+            Increment();
         }
     }
-    public void OnIncrement()
+    
+    //[ServerRpc]
+    public void Increment()
     {
         if (IsOwner)
         {
@@ -31,4 +33,3 @@ public class DebugScript : NetworkBehaviour
         print(testInt.Value);
     }
 }
-
