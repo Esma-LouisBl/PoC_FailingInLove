@@ -3,10 +3,17 @@ using UnityEngine;
 public class InputSender : MonoBehaviour
 {
     private PlayerNetwork player;
+    
+    public GameObject uiPrefab;
 
     void Start()
     {
         player = GetComponent<PlayerNetwork>();
+
+        if (player.IsOwner)
+        {
+            Instantiate(uiPrefab);
+        }
     }
 
     void Update()

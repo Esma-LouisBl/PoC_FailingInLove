@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
-using UnityEngine.SceneManagement;
 
 public class GameManagerNetwork : NetworkBehaviour
 {
@@ -21,7 +20,7 @@ public class GameManagerNetwork : NetworkBehaviour
         
         if (input == 1)
         {
-            // player.GetComponent<Transform>().position += Vector3.right;
+            player.GetComponent<Transform>().position += Vector3.right;
         }
     }
 }
