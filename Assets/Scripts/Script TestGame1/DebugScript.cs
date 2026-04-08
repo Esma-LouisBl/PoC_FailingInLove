@@ -14,6 +14,7 @@ public class DebugScript : NetworkBehaviour
         //myDelegate = OnIncrement;
     }
 
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -22,6 +23,7 @@ public class DebugScript : NetworkBehaviour
             Increment();
         }
     }
+    */
     
     //[ServerRpc]
     public void Increment()

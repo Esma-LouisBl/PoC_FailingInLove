@@ -19,12 +19,18 @@ public class InputSender : MonoBehaviour
         }
     }
 
+    //OUTDATED
     public void Move()
     {
-        print("moooove");
-        print(player.IsOwner);
         if (!player.IsOwner) return;
 
         player.SendInputServerRpc(1);
+    }
+    
+    public void Jump()
+    {
+        if (!player.IsOwner) return;
+        
+        player.SendInputServerRpc(2);
     }
 }
