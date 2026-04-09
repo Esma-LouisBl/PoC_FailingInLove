@@ -18,7 +18,7 @@ public class GameManagerNetwork : NetworkBehaviour
     {
         if (IsServer)
         {
-            player.GetComponentInChildren<Button>().gameObject.SetActive(false);
+            //player.GetComponentInChildren<Button>().gameObject.SetActive(false);
             players.Add(player);
             numberOfPlayers.Value = players.Count;
             //Debug.Log("Joueur ajouté. Total : " + players.Count);

@@ -9,6 +9,8 @@ public class PlayerNetwork : NetworkBehaviour
 {
     public int playerId;
     public GameManagerNetwork gameManagerNetwork;
+    
+    public GameObject canvasToEnable;
 
     public override void OnNetworkSpawn()
     {
@@ -26,12 +28,9 @@ public class PlayerNetwork : NetworkBehaviour
         
         //doesnt work, should maybe disable itself instead of all others ? dunno, things to try, it works anyway when canvas are disabled
         //otherwise, there is still the 2-2 problem on screens, even if players don't notice it -> maybe it's linked to the canvas issue as well ?
-        foreach (PlayerNetwork playerToDisableUI in GetComponents<PlayerNetwork>())
+        if (IsOwner)
         {
-            if (playerToDisableUI.gameObject != gameObject)
-            {
-                playerToDisableUI.GetComponentInChildren<Canvas>().gameObject.SetActive(false);
-            }
+            canvasToEnable.SetActive(true);
         }
     }
 
