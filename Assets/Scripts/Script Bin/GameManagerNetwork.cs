@@ -52,11 +52,13 @@ public class GameManagerNetwork : NetworkBehaviour
                 gameObject.GetComponent<GameManager>().myNumberAsPlayerText.text = "Player : " + gameObject.GetComponent<GameManager>().myNumberAsPlayer.ToString();
                 player.transform.position = new Vector3(gameObject.GetComponent<GameManager>().myNumberAsPlayer+0.2f, 0.5f, 0);
                 player.GetComponentInChildren<TextMeshPro>().text = gameObject.GetComponent<GameManager>().myNumberAsPlayer.ToString();
+                //player.GetComponent<Renderer>().material.color = Color.green;
                 
                 if (players.Count > 0 && IsServer)
                 {
                     startMiniGameButton.SetActive(true);
                     startCrushCreationButton.SetActive(true);
+                    FindFirstObjectByType<SpawnerBehavior>().numberOfPlayers = players.Count;
                 }
                 break;
             
@@ -101,13 +103,13 @@ public class GameManagerNetwork : NetworkBehaviour
         if (canJump)
         {
             canJump = false;
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 130; i++)
             {
                 player.GetComponent<Transform>().position += (jumpVector/100);
                 yield return new WaitForSeconds(0.001f*(i+1)/40);
             }
             yield return new WaitForSeconds(0.1f);
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 130; i++)
             {
                 player.GetComponent<Transform>().position -= (jumpVector/100);
                 yield return new WaitForSeconds(0.001f*(100-i+1)/100);
