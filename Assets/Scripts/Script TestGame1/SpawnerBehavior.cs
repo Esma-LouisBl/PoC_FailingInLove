@@ -21,16 +21,21 @@ public class SpawnerBehavior : MonoBehaviour
     public void EndMinigame()
     {
         print("Minigame ended");
+        minigameStarted = false;
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            player.GetComponent<Renderer>().material.color = Color.green;
+        }
     }
 
     private IEnumerator SpawnProjetciles()
     {
+        yield return new WaitForSeconds(1.5f);
         for (int i = 0; i < 10; i++)
         {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
             yield return new WaitForSeconds(3f);
-            Instantiate(projectilePrefab);
         }
-        yield return new WaitForSeconds(3f);
         EndMinigame();
     }
 }
