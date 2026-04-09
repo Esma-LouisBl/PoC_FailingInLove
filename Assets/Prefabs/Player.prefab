@@ -250,7 +250,6 @@ GameObject:
   - component: {fileID: 6504450953355389370}
   - component: {fileID: -1051760746347465892}
   - component: {fileID: -7738039522360267652}
-  - component: {fileID: -8898299085058565843}
   - component: {fileID: -772594420618167612}
   m_Layer: 0
   m_Name: Player
@@ -406,21 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4592dad986b4ffc4a90e751f9ab3e802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputSender
---- !u!114 &-8898299085058565843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6750716429481275341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4630855e45fb5874f8c3e99178cf55cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Library
-  ShowTopMostFoldoutHeaderGroup: 1
-  state: {fileID: 0}
-  playerController: {fileID: 0}
+  uiPrefab: {fileID: 0}
 --- !u!114 &-772594420618167612
 MonoBehaviour:
   m_ObjectHideFlags: 0
