@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5848126377872605633
 RectTransform:
   m_ObjectHideFlags: 0
@@ -320,6 +320,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   playerId: 0
   gameManagerNetwork: {fileID: 0}
+  canvasToEnable: {fileID: 1427942676219092391}
 --- !u!54 &9085185630770799871
 Rigidbody:
   m_ObjectHideFlags: 0
