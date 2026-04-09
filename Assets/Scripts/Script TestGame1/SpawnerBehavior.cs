@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 using UnityEngine.UI;
 
 public class SpawnerBehavior : MonoBehaviour
@@ -8,6 +9,8 @@ public class SpawnerBehavior : MonoBehaviour
     public GameObject projectilePrefab;
     [SerializeField]
     private Button startMiniGameButton;
+    [SerializeField]
+    private GameObject minigameEndedText;
     
     public int numberOfPlayers;
     
@@ -38,11 +41,15 @@ public class SpawnerBehavior : MonoBehaviour
     private IEnumerator SpawnProjetciles()
     {
         yield return new WaitForSeconds(1.5f);
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-            yield return new WaitForSeconds(3f);
+            var projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            projectile.GetComponent<ProjectileBehavior>().projectileSpeed = 7 + i*0.5f;
+            yield return new WaitForSeconds(3f-i*0.2f);
         }
+        minigameEndedText.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        minigameEndedText.SetActive(false);
         EndMinigame();
     }
 }
