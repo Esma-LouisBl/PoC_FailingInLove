@@ -50,11 +50,12 @@ public class GameManagerNetwork : NetworkBehaviour
                 gameObject.GetComponent<GameManager>().myNumberAsPlayerText.text = "Player : " + gameObject.GetComponent<GameManager>().myNumberAsPlayer.ToString();
                 player.transform.position = new Vector3(gameObject.GetComponent<GameManager>().myNumberAsPlayer+0.2f, 0.5f, 0);
                 player.GetComponentInChildren<TextMeshPro>().text = gameObject.GetComponent<GameManager>().myNumberAsPlayer.ToString();
-                player.GetComponent<Renderer>().material.color = Color.green;
+                //player.GetComponent<Renderer>().material.color = Color.green;
                 
                 if (players.Count > 0 && IsServer)
                 {
                     startMiniGameButton.SetActive(true);
+                    FindFirstObjectByType<SpawnerBehavior>().numberOfPlayers = players.Count;
                 }
                 break;
         }
