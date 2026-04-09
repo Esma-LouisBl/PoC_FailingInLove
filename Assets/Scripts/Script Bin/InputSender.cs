@@ -22,15 +22,22 @@ public class InputSender : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            player.SendInputServerRpc(1);
+            player.SendInputServerRpc(2);
         }
     }
 
+    //OUTDATED
     public void Move()
     {
-        print("moooove");
         if (!player.IsOwner) return;
 
         player.SendInputServerRpc(1);
+    }
+    
+    public void Jump()
+    {
+        if (!player.IsOwner) return;
+        
+        player.SendInputServerRpc(2);
     }
 }

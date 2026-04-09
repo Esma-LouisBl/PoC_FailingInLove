@@ -9,7 +9,7 @@ public class GameManager : NetworkBehaviour
     public TextMeshProUGUI numberOfPlayersText, myNumberAsPlayerText;
 
     public NetworkVariable<int> numberOfPlayers;
-    private int myNumberAsPlayer;
+    public int myNumberAsPlayer;
     
     public void SetPlayer()
     {
@@ -17,9 +17,9 @@ public class GameManager : NetworkBehaviour
         {
             connectionUI.SetActive(false);
             playerUI.SetActive(true);
-            numberOfPlayers.Value++;
-            myNumberAsPlayer = numberOfPlayers.Value;
-            myNumberAsPlayerText.text = myNumberAsPlayer.ToString();
+            //numberOfPlayers.Value++;
+            //myNumberAsPlayer = numberOfPlayers.Value;
+            //myNumberAsPlayerText.text = myNumberAsPlayer.ToString();
         }
     }
     
