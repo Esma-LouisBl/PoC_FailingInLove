@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2799776811
+  GlobalObjectIdHash: 4181220663
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -1074,7 +1074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4592dad986b4ffc4a90e751f9ab3e802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputSender
-  uiPrefab: {fileID: 0}
 --- !u!114 &3408624427787746130
 MonoBehaviour:
   m_ObjectHideFlags: 0
