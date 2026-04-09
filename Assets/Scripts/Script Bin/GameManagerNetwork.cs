@@ -9,7 +9,9 @@ public class GameManagerNetwork : NetworkBehaviour
 {
     private List<PlayerNetwork> players = new List<PlayerNetwork>();
     public NetworkVariable<int> numberOfPlayers;
-    public GameObject startMiniGameButton;
+    public GameObject startMiniGameButton, startCrushCreationButton;
+
+    public CrushCreation crushManager;
     
     private bool canJump = true;
     private Vector3 jumpVector = new Vector3(0, 2f, 0);
@@ -54,7 +56,34 @@ public class GameManagerNetwork : NetworkBehaviour
                 if (players.Count > 0 && IsServer)
                 {
                     startMiniGameButton.SetActive(true);
+                    startCrushCreationButton.SetActive(true);
                 }
+                break;
+            
+            //Relative to Crush Creation
+            case 4:
+                crushManager.ChangeHair(true);
+                break;
+            case 5:
+                crushManager.ChangeHair(false);
+                break;
+            case 6:
+                crushManager.ChangeFace(true);
+                break;
+            case 7:
+                crushManager.ChangeFace(false);
+                break;
+            case 8:
+                crushManager.ChangeBody(true);
+                break;
+            case 9:
+                crushManager.ChangeBody(false);
+                break;
+            case 10:
+                crushManager.ChangeAccessories(true);
+                break;
+            case 11:
+                crushManager.ChangeAccessories(false);
                 break;
         }
     }

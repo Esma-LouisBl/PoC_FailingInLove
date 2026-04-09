@@ -5,7 +5,7 @@ using Unity.Netcode;
 
 public class GameManager : NetworkBehaviour
 {
-    public GameObject playerUI, serverUI, connectionUI;
+    public GameObject playerUI, serverUI, connectionUI, crushUI;
     public TextMeshProUGUI numberOfPlayersText, myNumberAsPlayerText;
 
     public NetworkVariable<int> numberOfPlayers;
@@ -43,5 +43,10 @@ public class GameManager : NetworkBehaviour
         {
             //print(numberOfPlayers.Value);
         }
+    }
+
+    public void ShowCrush()
+    {
+        crushUI.SetActive(true);
     }
 }
