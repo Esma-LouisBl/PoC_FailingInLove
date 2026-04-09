@@ -14,6 +14,7 @@ public class GameManagerNetwork : NetworkBehaviour
     public CrushCreation crushManager;
     
     private bool canJump = true;
+    private float playerHeight;
     private Vector3 jumpVector = new Vector3(0, 2f, 0);
     
     public void RegisterPlayer(PlayerNetwork player)
@@ -51,6 +52,7 @@ public class GameManagerNetwork : NetworkBehaviour
                 gameObject.GetComponent<GameManager>().myNumberAsPlayer = numberOfPlayers.Value;
                 gameObject.GetComponent<GameManager>().myNumberAsPlayerText.text = "Player : " + gameObject.GetComponent<GameManager>().myNumberAsPlayer.ToString();
                 player.transform.position = new Vector3(gameObject.GetComponent<GameManager>().myNumberAsPlayer+0.2f, 0.5f, 0);
+                playerHeight = 0.51f;
                 player.GetComponentInChildren<TextMeshPro>().text = gameObject.GetComponent<GameManager>().myNumberAsPlayer.ToString();
                 //player.GetComponent<Renderer>().material.color = Color.green;
                 
@@ -100,7 +102,7 @@ public class GameManagerNetwork : NetworkBehaviour
 
     private IEnumerator Jump(PlayerNetwork player)
     {
-        if (canJump)
+        if (playerHeight > player.transform.position.y)
         {
             canJump = false;
             for (int i = 0; i < 130; i++)
