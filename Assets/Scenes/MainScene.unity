@@ -1282,7 +1282,6 @@ GameObject:
   m_Component:
   - component: {fileID: 473824905}
   - component: {fileID: 473824906}
-  - component: {fileID: 473824907}
   m_Layer: 0
   m_Name: Debug
   m_TagString: Untagged
@@ -1330,24 +1329,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &473824907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473824904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332671396dae55643bf376999d463c4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebugScript
-  ShowTopMostFoldoutHeaderGroup: 1
-  testInt:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
 --- !u!1 &478709404
 GameObject:
   m_ObjectHideFlags: 0
