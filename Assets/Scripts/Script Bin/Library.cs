@@ -5,17 +5,7 @@ using Unity.Netcode;
 public class Library : NetworkBehaviour
 {
     public TextMeshProUGUI state;
-    public PlayerController playerController;
-    
-    
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
-        if (!IsOwner)
-        {
-            playerController.enabled = false;
-        }
-    }
+
     void Update()
     {
         if (IsOwner)
