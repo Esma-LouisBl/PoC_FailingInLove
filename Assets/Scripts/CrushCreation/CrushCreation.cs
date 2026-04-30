@@ -9,12 +9,14 @@ public class CrushCreation : NetworkBehaviour
     public Image hair, face, body, accessories;
     public List<Sprite> hairSprites,  faceSprites, bodySprites, accessoriesSprites;
     public GameObject canvasCrush;
-    public GameObject canvasJump;
+    public GameManager gameManager;
+    public PlayerNetwork playerRef;
     
     private int _hairIndex, _faceIndex, _bodyIndex, _accessoriesIndex;
 
     private void Start()
     {
+        gameManager = FindFirstObjectByType<GameManager>();
         hair.sprite = hairSprites[_hairIndex];
         face.sprite = faceSprites[_faceIndex];
         body.sprite = bodySprites[_bodyIndex];
@@ -107,10 +109,26 @@ public class CrushCreation : NetworkBehaviour
         
         accessories.sprite = accessoriesSprites[_accessoriesIndex];
     }
-
+    
     public void CloseCrushCreation()
     {
-        canvasCrush.SetActive(false);
-        canvasJump.SetActive(true);
+        if (IsServer)
+        {
+            canvasCrush.SetActive(false);
+        }
+        OpenMiniGameUIClientRpc();
+    }
+
+    [ClientRpc]
+    public void OpenMiniGameUIClientRpc()
+    {
+        if (!IsServer)
+        {
+            playerRef.canvasBody.SetActive(false);
+            playerRef.canvasHair.SetActive(false);
+            playerRef.canvasFace.SetActive(false);
+            playerRef.canvasAccessories.SetActive(false);
+            playerRef.canvasJump.SetActive(true);
+        }
     }
 }

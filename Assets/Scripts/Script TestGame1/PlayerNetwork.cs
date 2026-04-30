@@ -14,6 +14,7 @@ public class PlayerNetwork : NetworkBehaviour
 
     public GameManager gameManager;
     
+    
     [NotNull] public GameObject canvasJump, canvasHair, canvasFace, canvasBody, canvasAccessories;
 
     public override void OnNetworkSpawn()
@@ -30,6 +31,7 @@ public class PlayerNetwork : NetworkBehaviour
         if (IsOwner)
         {
             StartCoroutine(GetIdWithDelay());
+            gameManagerNetwork.crushManager.playerRef = this;
             gameObject.GetComponent<Renderer>().material.color = Color.red;
         }
     }

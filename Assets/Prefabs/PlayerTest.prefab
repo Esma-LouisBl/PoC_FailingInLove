@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 1445447830201804333}
   - component: {fileID: 5674193834310513112}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1089,6 +1089,7 @@ MonoBehaviour:
   playerId: 0
   playerNumber: 0
   gameManagerNetwork: {fileID: 0}
+  gameManager: {fileID: 0}
   canvasJump: {fileID: 1427942676219092391}
   canvasHair: {fileID: 672508776112351202}
   canvasFace: {fileID: 7467908582515491187}

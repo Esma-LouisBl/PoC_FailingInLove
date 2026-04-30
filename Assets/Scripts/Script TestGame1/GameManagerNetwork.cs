@@ -29,14 +29,6 @@ public class GameManagerNetwork : NetworkBehaviour
         //Note : Si un joueur s'en va, ça ne l'enlève pas de la liste
     }
 
-    /*
-    public void JumpWithButton()
-    {
-        var player = FindFirstObjectByType(typeof(PlayerNetwork)) as PlayerNetwork;
-        player.GetComponent<InputSender>().Jump();
-    }
-    */
-
     public void ReceiveInput(PlayerNetwork player, int input)
     {
         //Debug.Log($"Input reçu de {player} : {input}");
@@ -69,7 +61,6 @@ public class GameManagerNetwork : NetworkBehaviour
             //Relative to Crush Creation
             case 4:
                 crushManager.ChangeHair(true);
-                print("reading");
                 break;
             case 5:
                 crushManager.ChangeHair(false);
@@ -94,13 +85,7 @@ public class GameManagerNetwork : NetworkBehaviour
                 break;
         }
     }
-
-    [ClientRpc]
-    public void DebugDataButtonClientRpc()
-    {
-        print("debugging line");
-    }
-
+    
     /*
     private void Update()
     {
