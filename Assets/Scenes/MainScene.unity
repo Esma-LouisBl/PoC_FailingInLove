@@ -905,6 +905,7 @@ MonoBehaviour:
   startMiniGameButton: {fileID: 0}
   minigameEndedText: {fileID: 0}
   numberOfPlayers: 0
+  someoneWon: 0
 --- !u!1 &470039881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,7 +2824,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Minigame ended !
 
-    You can restart'
+    It will restart'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3249,6 +3250,7 @@ MonoBehaviour:
   startMiniGameButton: {fileID: 0}
   minigameEndedText: {fileID: 1441860069}
   numberOfPlayers: 0
+  someoneWon: 0
 --- !u!1 &1706286871
 GameObject:
   m_ObjectHideFlags: 0

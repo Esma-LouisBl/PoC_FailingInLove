@@ -7,6 +7,7 @@ public class ProjectileBehavior : MonoBehaviour
     public int direction = 1;
     public float projectileSpeed = 7f;
     public GameManager gameManager;
+    public SpawnerBehavior mySpawner;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class ProjectileBehavior : MonoBehaviour
         {
             r.enabled = false;
         }
+        mySpawner.someoneWon = true;
     }
 
     private IEnumerator DestroyProjectileAfterDelay(float delay)
