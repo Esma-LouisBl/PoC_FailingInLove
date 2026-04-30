@@ -39,6 +39,5 @@ public class InputSender : MonoBehaviour
         if (!player.IsOwner) return;
         
         player.SendInputServerRpc(2);
-        print("Jump");
     }
 }
