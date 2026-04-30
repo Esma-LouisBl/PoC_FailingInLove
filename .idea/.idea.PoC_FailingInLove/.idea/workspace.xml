@@ -6,25 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a54b95c1-f4c8-45e8-9f89-579fc869113c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoC_FailingInLove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoC_FailingInLove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/GameManagerNetwork.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/GameManagerNetwork.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/InputSender.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/InputSender.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/Library.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/Library.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/NetworkTransformClient.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/NetworkTransformClient.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/NetworkUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/NetworkUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/PhoneScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/PhoneScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/PlayerNetwork.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/PlayerNetwork.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/RelayManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script Bin/RelayManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/DebugScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/DebugScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerTest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerTest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CrushCreation/CrushCreation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CrushCreation/CrushCreation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManagerNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManagerNetwork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/PlayerNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/PlayerNetwork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +28,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CrushCreation/CrushCreation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManagerNetwork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Script TestGame1/InputSender.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Script TestGame1/PlayerNetwork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Script TestGame1/ServerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@60c1d83693e8/Runtime/Core/NetworkManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.qos@03d4b52d4980/Runtime/Runner/QosJob.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -137,7 +134,13 @@
       <workItem from="1777357695242" duration="22000" />
       <workItem from="1777357728138" duration="13000" />
       <workItem from="1777357749722" duration="15000" />
-      <workItem from="1777357785590" duration="1351000" />
+      <workItem from="1777357785590" duration="10298000" />
+      <workItem from="1777455377247" duration="25000" />
+      <workItem from="1777455408694" duration="1422000" />
+      <workItem from="1777457401703" duration="1353000" />
+      <workItem from="1777458847756" duration="3894000" />
+      <workItem from="1777536290751" duration="4100000" />
+      <workItem from="1777544959207" duration="1321000" />
     </task>
     <servers />
   </component>

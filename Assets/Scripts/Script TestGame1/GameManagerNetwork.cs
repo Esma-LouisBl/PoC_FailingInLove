@@ -14,7 +14,7 @@ public class GameManagerNetwork : NetworkBehaviour
     public CrushCreation crushManager;
     
     private bool canJump = true;
-    private float playerHeight;
+    private float playerHeight = 0.51f;
     private Vector3 jumpVector = new Vector3(0, 2f, 0);
     
     public void RegisterPlayer(PlayerNetwork player)
@@ -49,24 +49,27 @@ public class GameManagerNetwork : NetworkBehaviour
                 StartCoroutine(Jump(player));
                 break;
             case 3: //Init Player
-                gameObject.GetComponent<GameManager>().myNumberAsPlayer = numberOfPlayers.Value;
-                gameObject.GetComponent<GameManager>().myNumberAsPlayerText.text = "Player : " + gameObject.GetComponent<GameManager>().myNumberAsPlayer.ToString();
-                player.transform.position = new Vector3(gameObject.GetComponent<GameManager>().myNumberAsPlayer+0.2f, 0.5f, 0);
-                playerHeight = 0.51f;
-                player.GetComponentInChildren<TextMeshPro>().text = gameObject.GetComponent<GameManager>().myNumberAsPlayer.ToString();
-                //player.GetComponent<Renderer>().material.color = Color.green;
-                
-                if (players.Count > 0 && IsServer)
+                if (gameObject.GetComponent<GameManager>().myNumberAsPlayer == 0 && !IsOwner)
                 {
-                    startMiniGameButton.SetActive(true);
-                    startCrushCreationButton.SetActive(true);
+                    gameObject.GetComponent<GameManager>().myNumberAsPlayer = numberOfPlayers.Value;
+                }
+                playerHeight = 0.51f;
+                player.gameManager.myNumberAsPlayerText.text = "Player : " + player.gameManager.myNumberAsPlayer;
+                player.transform.position = new Vector3(numberOfPlayers.Value+0.2f, 0.5f, 0);
+                player.GetComponentInChildren<TextMeshPro>().text = numberOfPlayers.Value.ToString();
+                
+                if (players.Count > 1 && IsServer)
+                {
+                    gameObject.GetComponent<GameManager>().ShowCrush();
                     FindFirstObjectByType<SpawnerBehavior>().numberOfPlayers = players.Count;
+                    startMiniGameButton.SetActive(true);
                 }
                 break;
             
             //Relative to Crush Creation
             case 4:
                 crushManager.ChangeHair(true);
+                print("reading");
                 break;
             case 5:
                 crushManager.ChangeHair(false);
@@ -92,6 +95,13 @@ public class GameManagerNetwork : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
+    public void DebugDataButtonClientRpc()
+    {
+        print("debugging line");
+    }
+
+    /*
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -99,6 +109,7 @@ public class GameManagerNetwork : NetworkBehaviour
             print(numberOfPlayers.Value.ToString());
         }
     }
+    */
 
     private IEnumerator Jump(PlayerNetwork player)
     {

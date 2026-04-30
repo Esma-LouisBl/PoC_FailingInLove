@@ -41,6 +41,7 @@ public class GameManager : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //print(myNumberAsPlayer);
             //print(numberOfPlayers.Value);
         }
     }
