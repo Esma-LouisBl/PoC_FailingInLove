@@ -10,6 +10,7 @@ public class GameManager : NetworkBehaviour
 
     public NetworkVariable<int> numberOfPlayers;
     public int myNumberAsPlayer;
+    public SpawnerBehavior spawner;
     
     public void SetPlayer()
     {
@@ -49,5 +50,10 @@ public class GameManager : NetworkBehaviour
     public void ShowCrush()
     {
         crushUI.SetActive(true);
+    }
+    
+    public void StartMiniGame()
+    {
+        spawner.StartSpawning();
     }
 }

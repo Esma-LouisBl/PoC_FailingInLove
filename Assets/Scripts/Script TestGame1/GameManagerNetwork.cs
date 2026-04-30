@@ -9,7 +9,6 @@ public class GameManagerNetwork : NetworkBehaviour
 {
     private List<PlayerNetwork> players = new List<PlayerNetwork>();
     public NetworkVariable<int> numberOfPlayers;
-    public GameObject startMiniGameButton, startCrushCreationButton;
 
     public CrushCreation crushManager;
     
@@ -54,7 +53,6 @@ public class GameManagerNetwork : NetworkBehaviour
                 {
                     gameObject.GetComponent<GameManager>().ShowCrush();
                     FindFirstObjectByType<SpawnerBehavior>().numberOfPlayers = players.Count;
-                    startMiniGameButton.SetActive(true);
                 }
                 break;
             
