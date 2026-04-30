@@ -12,14 +12,14 @@ public class PlayerNetwork : NetworkBehaviour
     public int playerId, playerNumber;
     public GameManagerNetwork gameManagerNetwork;
 
-    private GameManager _gameManager;
+    public GameManager gameManager;
     
-    [NotNull] public GameObject canvasToEnable, canvasHair, canvasFace, canvasBody, canvasAccessories, canvasStartCrush;
+    [NotNull] public GameObject canvasJump, canvasHair, canvasFace, canvasBody, canvasAccessories;
 
     public override void OnNetworkSpawn()
     {
         gameManagerNetwork = FindFirstObjectByType<GameManagerNetwork>();
-        _gameManager = FindFirstObjectByType<GameManager>();
+        gameManager = FindFirstObjectByType<GameManager>();
         
         if (IsServer)
         {
@@ -32,20 +32,12 @@ public class PlayerNetwork : NetworkBehaviour
             StartCoroutine(GetIdWithDelay());
             gameObject.GetComponent<Renderer>().material.color = Color.red;
         }
-        
-        //doesnt work, should maybe disable itself instead of all others ? dunno, things to try, it works anyway when canvas are disabled
-        //otherwise, there is still the 2-2 problem on screens, even if players don't notice it -> maybe it's linked to the canvas issue as well ?
-        if (IsOwner)
-        {
-            canvasToEnable.SetActive(true);
-        }
     }
 
     public void LoadCrushCreation()
     {
         if (IsOwner)
         {
-            canvasStartCrush.SetActive(false);
             switch (playerNumber)
             {
                 case 1:
@@ -79,9 +71,20 @@ public class PlayerNetwork : NetworkBehaviour
     private IEnumerator GetIdWithDelay()
     {
         yield return new WaitForSeconds(0.02f);
-        playerNumber = _gameManager.myNumberAsPlayer;
+        playerNumber = gameManager.myNumberAsPlayer;
         
-        canvasStartCrush.SetActive(true); //Je pose ça là pour le moment histoire de l'activer dès le début mais pas chez tout le monde
-        
+        //canvasStartCrush.SetActive(true); //Je pose ça là pour le moment histoire de l'activer dès le début mais pas chez tout le monde
+        LoadCrushCreation();
+        /*
+        if (playerNumber >= 2)
+        {
+            LoadCrushCreation();
+        }
+        */
+    }
+
+    public void ShowJumpButton()
+    {
+        canvasJump.SetActive(true);
     }
 }

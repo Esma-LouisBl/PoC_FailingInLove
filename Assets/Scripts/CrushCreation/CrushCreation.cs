@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CrushCreation : MonoBehaviour
+public class CrushCreation : NetworkBehaviour
 {
     public Image hair, face, body, accessories;
     public List<Sprite> hairSprites,  faceSprites, bodySprites, accessoriesSprites;
+    public GameObject canvasCrush;
+    public GameObject canvasJump;
     
     private int _hairIndex, _faceIndex, _bodyIndex, _accessoriesIndex;
 
@@ -103,5 +106,11 @@ public class CrushCreation : MonoBehaviour
         }
         
         accessories.sprite = accessoriesSprites[_accessoriesIndex];
+    }
+
+    public void CloseCrushCreation()
+    {
+        canvasCrush.SetActive(false);
+        canvasJump.SetActive(true);
     }
 }
