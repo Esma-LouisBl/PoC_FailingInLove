@@ -21,7 +21,6 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.gameObject.name);
         //other.GetComponent<Renderer>().material.color = Color.red;
         other.GetComponent<Renderer>().enabled = false;
         foreach (Renderer r in other.GetComponentsInChildren<Renderer>())
