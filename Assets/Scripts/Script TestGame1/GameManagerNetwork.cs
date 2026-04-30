@@ -69,7 +69,6 @@ public class GameManagerNetwork : NetworkBehaviour
             //Relative to Crush Creation
             case 4:
                 crushManager.ChangeHair(true);
-                print("reading");
                 break;
             case 5:
                 crushManager.ChangeHair(false);
@@ -95,12 +94,11 @@ public class GameManagerNetwork : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
-    public void DebugDataButtonClientRpc()
+    public void DebugJumpButton()
     {
-        print("debugging line");
+        Debug.Log("Jump");
     }
-
+    
     /*
     private void Update()
     {
