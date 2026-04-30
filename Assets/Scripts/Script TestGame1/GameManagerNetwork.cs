@@ -29,14 +29,6 @@ public class GameManagerNetwork : NetworkBehaviour
         //Note : Si un joueur s'en va, ça ne l'enlève pas de la liste
     }
 
-    /*
-    public void JumpWithButton()
-    {
-        var player = FindFirstObjectByType(typeof(PlayerNetwork)) as PlayerNetwork;
-        player.GetComponent<InputSender>().Jump();
-    }
-    */
-
     public void ReceiveInput(PlayerNetwork player, int input)
     {
         //Debug.Log($"Input reçu de {player} : {input}");
@@ -92,11 +84,6 @@ public class GameManagerNetwork : NetworkBehaviour
                 crushManager.ChangeAccessories(false);
                 break;
         }
-    }
-
-    public void DebugJumpButton()
-    {
-        Debug.Log("Jump");
     }
     
     /*

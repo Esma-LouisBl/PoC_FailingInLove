@@ -9,7 +9,6 @@ public class CrushCreation : NetworkBehaviour
     public Image hair, face, body, accessories;
     public List<Sprite> hairSprites,  faceSprites, bodySprites, accessoriesSprites;
     public GameObject canvasCrush;
-    public GameObject canvasJump;
     public GameManager gameManager;
     public PlayerNetwork playerRef;
     
@@ -129,7 +128,7 @@ public class CrushCreation : NetworkBehaviour
             playerRef.canvasHair.SetActive(false);
             playerRef.canvasFace.SetActive(false);
             playerRef.canvasAccessories.SetActive(false);
-            canvasJump.SetActive(true);
+            playerRef.canvasJump.SetActive(true);
         }
     }
 }
