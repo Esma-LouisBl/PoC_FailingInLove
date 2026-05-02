@@ -6,7 +6,7 @@ using Unity.Netcode;
 public class GameManager : NetworkBehaviour
 {
     public GameObject playerUI, serverUI, connectionUI, crushUI;
-    public TextMeshProUGUI numberOfPlayersText, myNumberAsPlayerText;
+    public TextMeshProUGUI myNumberAsPlayerText;
 
     public NetworkVariable<int> numberOfPlayers;
     public int myNumberAsPlayer;
@@ -35,11 +35,6 @@ public class GameManager : NetworkBehaviour
 
     private void Update()
     {
-        if (IsOwner)
-        {
-            numberOfPlayersText.text = numberOfPlayers.Value.ToString();
-        }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //print(myNumberAsPlayer);
