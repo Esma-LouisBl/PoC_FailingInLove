@@ -34,7 +34,7 @@ public class PlayerNetwork : NetworkBehaviour
             gameManagerNetwork.crushManager.playerRef = this;
             gameObject.GetComponent<Renderer>().material.color = Color.red;
             
-            SendInputServerRpc(12);
+            SendInputServerRpc(12); //Update PlayerObjects List
         }
     }
 

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a54b95c1-f4c8-45e8-9f89-579fc869113c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoC_FailingInLove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoC_FailingInLove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManagerNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManagerNetwork.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/PlayerNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Script TestGame1/PlayerNetwork.cs" afterDir="false" />
     </list>
@@ -20,6 +20,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CrushCreation/CrushCreation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCreation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerScriptableObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Script TestGame1/GameManagerNetwork.cs" root0="FORCE_HIGHLIGHTING" />

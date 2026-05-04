@@ -14,6 +14,8 @@ public class GameManagerNetwork : NetworkBehaviour
     public List<PlayerScriptableObject> playerObjects;
 
     public CrushCreation crushManager;
+
+    private bool readyToShowCrush;
     
     private bool canJump = true;
     private float playerHeight = 0.51f;
@@ -52,7 +54,7 @@ public class GameManagerNetwork : NetworkBehaviour
                 player.transform.position = new Vector3(numberOfPlayers.Value+0.2f, 0.5f, 0);
                 player.GetComponentInChildren<TextMeshPro>().text = numberOfPlayers.Value.ToString();
                 
-                if (players.Count > 1 && IsServer)
+                if (players.Count > 1 && IsServer && readyToShowCrush)
                 {
                     gameObject.GetComponent<GameManager>().ShowCrush();
                     FindFirstObjectByType<SpawnerBehavior>().numberOfPlayers = players.Count;
@@ -91,11 +93,6 @@ public class GameManagerNetwork : NetworkBehaviour
                 playerObject.playerId = playerObjects.Count;
         
                 playerObjects.Add(playerObject);
-                Debug.Log("on est là");
-                foreach (PlayerScriptableObject plaaaaayer in playerObjects)
-                {
-                    Debug.Log(plaaaaayer.playerId);
-                }
                 break;
         }
     }
