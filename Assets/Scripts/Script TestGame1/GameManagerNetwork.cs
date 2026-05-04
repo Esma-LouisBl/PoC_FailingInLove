@@ -9,6 +9,9 @@ public class GameManagerNetwork : NetworkBehaviour
 {
     private List<PlayerNetwork> players = new List<PlayerNetwork>();
     public NetworkVariable<int> numberOfPlayers;
+    
+    
+    public List<PlayerScriptableObject> playerObjects;
 
     public CrushCreation crushManager;
     
@@ -80,6 +83,19 @@ public class GameManagerNetwork : NetworkBehaviour
                 break;
             case 11:
                 crushManager.ChangeAccessories(false);
+                break;
+            
+            //Relative to Player ScriptableObject
+            case 12:
+                PlayerScriptableObject playerObject = PlayerScriptableObject.CreateInstance<PlayerScriptableObject>();
+                playerObject.playerId = playerObjects.Count;
+        
+                playerObjects.Add(playerObject);
+                Debug.Log("on est là");
+                foreach (PlayerScriptableObject plaaaaayer in playerObjects)
+                {
+                    Debug.Log(plaaaaayer.playerId);
+                }
                 break;
         }
     }

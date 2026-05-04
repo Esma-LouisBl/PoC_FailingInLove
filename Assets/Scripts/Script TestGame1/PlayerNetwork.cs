@@ -33,7 +33,8 @@ public class PlayerNetwork : NetworkBehaviour
             StartCoroutine(GetIdWithDelay());
             gameManagerNetwork.crushManager.playerRef = this;
             gameObject.GetComponent<Renderer>().material.color = Color.red;
-            // PlayerScriptableObject.CreateInstance(PlayerScriptableObject);
+            
+            SendInputServerRpc(12);
         }
     }
 
