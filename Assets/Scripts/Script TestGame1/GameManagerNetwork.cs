@@ -102,6 +102,7 @@ public class GameManagerNetwork : NetworkBehaviour
                     {
                         playerScriptableObject.playerName = player.playerName;
                     }
+                    print(playerScriptableObject.playerName);
 
                     break;
                 }

@@ -46,8 +46,9 @@ public class GameManager : NetworkBehaviour
         spawner.StartSpawning();
     }
 
-    public void PlayerNameButton(string playerName)
+    public void PlayerNameButton(TextMeshProUGUI playerName)
     {
-        myPlayer.ConfirmPlayerName(playerName);
+        string absoluteName = playerName.text;
+        myPlayer.ConfirmPlayerName(absoluteName);
     }
 }
