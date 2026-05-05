@@ -9,8 +9,13 @@ public class GameManagerNetwork : NetworkBehaviour
 {
     private List<PlayerNetwork> players = new List<PlayerNetwork>();
     public NetworkVariable<int> numberOfPlayers;
+    
+    
+    public List<PlayerScriptableObject> playerObjects;
 
     public CrushCreation crushManager;
+
+    private bool readyToShowCrush;
     
     private bool canJump = true;
     private float playerHeight = 0.51f;
@@ -49,7 +54,7 @@ public class GameManagerNetwork : NetworkBehaviour
                 player.transform.position = new Vector3(numberOfPlayers.Value+0.2f, 0.5f, 0);
                 player.GetComponentInChildren<TextMeshPro>().text = numberOfPlayers.Value.ToString();
                 
-                if (players.Count > 1 && IsServer)
+                if (players.Count > 1 && IsServer && readyToShowCrush)
                 {
                     gameObject.GetComponent<GameManager>().ShowCrush();
                     FindFirstObjectByType<SpawnerBehavior>().numberOfPlayers = players.Count;
@@ -81,6 +86,37 @@ public class GameManagerNetwork : NetworkBehaviour
             case 11:
                 crushManager.ChangeAccessories(false);
                 break;
+            
+            //Relative to Player ScriptableObject
+            case 12:
+                PlayerScriptableObject playerObject = PlayerScriptableObject.CreateInstance<PlayerScriptableObject>();
+                playerObject.playerNetwork = player;
+                playerObject.playerId = playerObjects.Count;
+        
+                playerObjects.Add(playerObject);
+                break;
+            case 13:    //Assignation du nom du joueur dans son ScriptableObject
+                // foreach (PlayerScriptableObject playerScriptableObject in playerObjects)
+                // {
+                //     if (player == playerScriptableObject.playerNetwork)
+                //     {
+                //         playerScriptableObject.playerName = player.playerName;
+                //     }
+                // }
+                break;
+        }
+    }
+    
+    
+    public void ReceiveName(PlayerNetwork player, string pName)
+    {
+        foreach (PlayerScriptableObject playerScriptableObject in playerObjects)
+        {
+            if (playerScriptableObject.playerNetwork == player)
+            {
+                playerScriptableObject.playerName = pName;
+            }
+            Debug.Log(playerScriptableObject.playerName);
         }
     }
     

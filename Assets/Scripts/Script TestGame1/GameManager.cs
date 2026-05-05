@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Unity.Netcode;
@@ -6,11 +7,13 @@ using Unity.Netcode;
 public class GameManager : NetworkBehaviour
 {
     public GameObject playerUI, serverUI, connectionUI, crushUI;
-    public TextMeshProUGUI numberOfPlayersText, myNumberAsPlayerText;
+    public TextMeshProUGUI myNumberAsPlayerText;
 
     public NetworkVariable<int> numberOfPlayers;
     public int myNumberAsPlayer;
     public SpawnerBehavior spawner;
+    
+    public PlayerNetwork myPlayer;
     
     public void SetPlayer()
     {
@@ -33,20 +36,6 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (IsOwner)
-        {
-            numberOfPlayersText.text = numberOfPlayers.Value.ToString();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //print(myNumberAsPlayer);
-            //print(numberOfPlayers.Value);
-        }
-    }
-
     public void ShowCrush()
     {
         crushUI.SetActive(true);
@@ -55,5 +44,11 @@ public class GameManager : NetworkBehaviour
     public void StartMiniGame()
     {
         spawner.StartSpawning();
+    }
+
+    public void PlayerNameButton(TextMeshProUGUI playerName)
+    {
+        string absoluteName = playerName.text;
+        myPlayer.SendPlayerNameServerRpc(absoluteName);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using TMPro;
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,8 @@ public class PlayerNetwork : NetworkBehaviour
     public GameManagerNetwork gameManagerNetwork;
 
     public GameManager gameManager;
+    
+    public string playerName;
     
     
     [NotNull] public GameObject canvasJump, canvasHair, canvasFace, canvasBody, canvasAccessories;
@@ -30,9 +33,13 @@ public class PlayerNetwork : NetworkBehaviour
         StartCoroutine(InitWithDelay());
         if (IsOwner)
         {
+            gameManager.myPlayer = this;
+            
             StartCoroutine(GetIdWithDelay());
             gameManagerNetwork.crushManager.playerRef = this;
             gameObject.GetComponent<Renderer>().material.color = Color.red;
+            
+            SendInputServerRpc(12); //Update PlayerObjects List
         }
     }
 
@@ -88,5 +95,12 @@ public class PlayerNetwork : NetworkBehaviour
     public void ShowJumpButton()
     {
         canvasJump.SetActive(true);
+    }
+
+    [ServerRpc]
+    public void SendPlayerNameServerRpc(string enteredName)
+    {
+        playerName = enteredName;
+        gameManagerNetwork.ReceiveName(this, playerName);
     }
 }
