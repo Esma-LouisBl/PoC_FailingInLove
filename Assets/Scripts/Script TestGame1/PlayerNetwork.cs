@@ -83,7 +83,7 @@ public class PlayerNetwork : NetworkBehaviour
         playerNumber = gameManager.myNumberAsPlayer;
         
         //canvasStartCrush.SetActive(true); //Je pose ça là pour le moment histoire de l'activer dès le début mais pas chez tout le monde
-        LoadCrushCreation();
+        // LoadCrushCreation();
         /*
         if (playerNumber >= 2)
         {

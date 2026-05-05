@@ -46,7 +46,7 @@ public class GameManager : NetworkBehaviour
         spawner.StartSpawning();
     }
 
-    public void PlayerNameButton(TextMeshProUGUI playerName)
+    public void PlayerNameButton(TextMeshProUGUI playerName)    //Used when Player click on the button to send their name
     {
         string absoluteName = playerName.text;
         myPlayer.SendPlayerNameServerRpc(absoluteName);
