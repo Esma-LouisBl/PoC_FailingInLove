@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using TMPro;
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -96,9 +97,10 @@ public class PlayerNetwork : NetworkBehaviour
         canvasJump.SetActive(true);
     }
 
-    public void ConfirmPlayerName(string enteredName)
+    [ServerRpc]
+    public void SendPlayerNameServerRpc(string enteredName)
     {
         playerName = enteredName;
-        SendInputServerRpc(13);
+        gameManagerNetwork.ReceiveName(this, playerName);
     }
 }

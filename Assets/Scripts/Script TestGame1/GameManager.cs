@@ -49,6 +49,6 @@ public class GameManager : NetworkBehaviour
     public void PlayerNameButton(TextMeshProUGUI playerName)
     {
         string absoluteName = playerName.text;
-        myPlayer.ConfirmPlayerName(absoluteName);
+        myPlayer.SendPlayerNameServerRpc(absoluteName);
     }
 }

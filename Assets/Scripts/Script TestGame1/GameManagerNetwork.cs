@@ -96,17 +96,27 @@ public class GameManagerNetwork : NetworkBehaviour
                 playerObjects.Add(playerObject);
                 break;
             case 13:    //Assignation du nom du joueur dans son ScriptableObject
-                foreach (PlayerScriptableObject playerScriptableObject in playerObjects)
-                {
-                    if (player == playerScriptableObject.playerNetwork)
-                    {
-                        playerScriptableObject.playerName = player.playerName;
-                    }
-                    print(playerScriptableObject.playerName);
-
-                    break;
-                }
+                // foreach (PlayerScriptableObject playerScriptableObject in playerObjects)
+                // {
+                //     if (player == playerScriptableObject.playerNetwork)
+                //     {
+                //         playerScriptableObject.playerName = player.playerName;
+                //     }
+                // }
                 break;
+        }
+    }
+    
+    
+    public void ReceiveName(PlayerNetwork player, string pName)
+    {
+        foreach (PlayerScriptableObject playerScriptableObject in playerObjects)
+        {
+            if (playerScriptableObject.playerNetwork == player)
+            {
+                playerScriptableObject.playerName = pName;
+            }
+            Debug.Log(playerScriptableObject.playerName);
         }
     }
     
