@@ -14,6 +14,8 @@ public class PlayerNetwork : NetworkBehaviour
 
     public GameManager gameManager;
     
+    public string playerName;
+    
     
     [NotNull] public GameObject canvasJump, canvasHair, canvasFace, canvasBody, canvasAccessories;
 
@@ -30,6 +32,8 @@ public class PlayerNetwork : NetworkBehaviour
         StartCoroutine(InitWithDelay());
         if (IsOwner)
         {
+            gameManager.myPlayer = this;
+            
             StartCoroutine(GetIdWithDelay());
             gameManagerNetwork.crushManager.playerRef = this;
             gameObject.GetComponent<Renderer>().material.color = Color.red;
@@ -90,5 +94,11 @@ public class PlayerNetwork : NetworkBehaviour
     public void ShowJumpButton()
     {
         canvasJump.SetActive(true);
+    }
+
+    public void ConfirmPlayerName(string enteredName)
+    {
+        playerName = enteredName;
+        SendInputServerRpc(13);
     }
 }

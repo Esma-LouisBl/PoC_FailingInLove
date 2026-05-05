@@ -13,6 +13,8 @@ public class GameManager : NetworkBehaviour
     public int myNumberAsPlayer;
     public SpawnerBehavior spawner;
     
+    public PlayerNetwork myPlayer;
+    
     public void SetPlayer()
     {
         if(!IsOwner)
@@ -34,16 +36,6 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //print(myNumberAsPlayer);
-            //print(numberOfPlayers.Value);
-        }
-    }
-
     public void ShowCrush()
     {
         crushUI.SetActive(true);
@@ -52,5 +44,10 @@ public class GameManager : NetworkBehaviour
     public void StartMiniGame()
     {
         spawner.StartSpawning();
+    }
+
+    public void PlayerNameButton(string playerName)
+    {
+        myPlayer.ConfirmPlayerName(playerName);
     }
 }

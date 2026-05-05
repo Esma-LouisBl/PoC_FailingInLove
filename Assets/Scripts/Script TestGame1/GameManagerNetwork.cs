@@ -90,9 +90,21 @@ public class GameManagerNetwork : NetworkBehaviour
             //Relative to Player ScriptableObject
             case 12:
                 PlayerScriptableObject playerObject = PlayerScriptableObject.CreateInstance<PlayerScriptableObject>();
+                playerObject.playerNetwork = player;
                 playerObject.playerId = playerObjects.Count;
         
                 playerObjects.Add(playerObject);
+                break;
+            case 13:    //Assignation du nom du joueur dans son ScriptableObject
+                foreach (PlayerScriptableObject playerScriptableObject in playerObjects)
+                {
+                    if (player == playerScriptableObject.playerNetwork)
+                    {
+                        playerScriptableObject.playerName = player.playerName;
+                    }
+
+                    break;
+                }
                 break;
         }
     }
